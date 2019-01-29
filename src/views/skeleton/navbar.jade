@@ -1,0 +1,12 @@
+//
+   Created by roveil on 04.07.16.
+
+nav.navbar.navbar-default
+    .container-fluid.dis-user-select
+        .navbar-header
+            img.navbar-brand(src='/img/carrot_quest.svg')
+        div.collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+                li(ng-controller="AuthCtrl")
+                    a.greyHover(ng-click="SignOut()" role="button")
+                        i.fa.fa-sign-out.carrot(aria-hidden="true")

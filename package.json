@@ -1,0 +1,20 @@
+{
+  "name": "carrot_chat",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "gulp",
+    "postinstall": "gulp build"
+  },
+  "dependencies": {
+    "gulp": "*",
+    "gulp-jade": "^1.1.0",
+    "gulp-stylus": "*",
+    "gulp-webserver": "^0.9.1",
+    "autoprefixer-stylus": "*",
+    "gulp-concat": "*"
+  },
+  "devDependencies": {
+    "gulp-bower": "0.0.7"
+  }
+}

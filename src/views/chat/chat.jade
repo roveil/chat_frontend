@@ -1,0 +1,25 @@
+include ../skeleton/navbar.jade
+.container-fluid
+    .row
+        .col-md-6.col-md-offset-3.col-xs-8.col-xs-offset-2
+            .panel.panel-primary.m-b-0
+                .panel-heading
+                    p.t-a-center
+                        i.fa.fa-comments-o.fa-3x(aria-hidden="true")
+            .panel-body.backwhite(id="chat_body")
+                .chat
+                    li.left.clearfix(ng-mouseover="mouseOver(this)" ng-repeat="msg in msgs" class="{{needtogrey===1 ? 'unread_messages' : ''}}" aria-hidden="true")
+                        span.chat-img.pull-left
+                            img.avatar_height(src="/img/avatar.jpg" class="img-circle")
+                        .chat-body.clearfix
+                            .header
+                                strong.primary-font {{msg.first_name + " " + msg.last_name + " "}}
+                                i.fa.fa-circle.psu(ng-show="msg.new_message" aria-hidden="true")
+                                small.pull-right.text-muted
+                                        i.fa.fa-clock-o(aria-hidden="true") {{ "  " + msg.created }}
+                            p {{ msg.text }}
+            .panel-footer
+                .input-group
+                    input.form-control.input-sm(id="btn-input" type="text" placeholder="Ваше сообщение" ng-model="mymsg")
+                    span.input-group-btn
+                        button.btn.btn-warning.btn-sm.m-l-15(id="btn-chat" ng-click="sendMsg()") Отправить

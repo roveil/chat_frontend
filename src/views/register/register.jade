@@ -1,0 +1,20 @@
+//
+   Created by roveil on 18.01.19.
+.container
+    .card.card-container.backwhite.p-b-10
+        img#profile-img.profile-img-card(src='/img/carrot_quest.svg')
+        p.t-a-center
+            i.fa.fa-comments-o.fa-3x(aria-hidden="true")
+        p#profile-name.profile-name-card
+        a.but-width.btn.btn-lg.btn-primary.btn-block.btn-signin(ui-sref="login" role="button")
+            i.m-t-20-proc.fa.fa-arrow-left(aria-hidden="true")
+        form.form-signin(ng-submit="SignIn()")
+            span#reauth-email.reauth-email
+            input.inputText.form-control(type='text', placeholder='Имя', required='', autofocus='' ng-model="chatUser.first_name")
+            input.inputText.form-control(type='text', placeholder='Фамилия', required='', autofocus='' ng-model="chatUser.last_name")
+            input.inputText.form-control(type='text', placeholder='Логин', required='', autofocus='' ng-model="chatUser.username")
+            input.inputText.form-control(type='text', placeholder='Email', required='', autofocus='' ng-model="chatUser.email")
+            input.inputPassword.form-control(type='password', placeholder='Пароль', required='' ng-model="chatUser.password")
+            input.inputPassword.form-control(type='password', placeholder='Введите пароль еще раз', required='' ng-model="checkpassword")
+            button.btn.btn-lg.btn-primary.btn-block.btn-signin(type='submit') Зарегистрироваться!
+    p.login-error {{ error }}

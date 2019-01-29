@@ -1,0 +1,6 @@
+include skeleton/main.jade
+body.psuback
+    .messageBox2.ng-hide(ng-show="showAlert")
+        pre {{message}}
+        .btn(ng-click="showAlert=false") {{'OK!'}}
+    div(ui-view="")
